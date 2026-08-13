@@ -58,7 +58,7 @@ OUTPUT FORMAT (exactly):
   ]);
 }
 
-export function runNotes(input: { notes: string; context?: string }) {
+export function runNotes(input: { notes: string; context?: string | undefined }) {
   const system = `${BASE_RULES}
 
 TASK: Meeting Notes Summarizer.
