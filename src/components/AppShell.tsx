@@ -23,7 +23,7 @@ const NAV = [
   { to: "/chat", label: "AI Chat", icon: Bot },
 ] as const;
 
-function NavLinks({ onNavigate }: { onNavigate?: () => void }) {
+function NavLinks({ onNavigate }: { onNavigate?: (() => void) | undefined }) {
   return (
     <nav className="flex flex-col gap-1">
       {NAV.map(({ to, label, icon: Icon }) => (
@@ -46,7 +46,7 @@ function NavLinks({ onNavigate }: { onNavigate?: () => void }) {
   );
 }
 
-function SidebarInner({ onNavigate }: { onNavigate?: () => void }) {
+function SidebarInner({ onNavigate }: { onNavigate?: (() => void) | undefined }) {
   return (
     <div className="flex h-full flex-col bg-sidebar px-4 py-5">
       <div className="flex items-center gap-2.5 px-2">
