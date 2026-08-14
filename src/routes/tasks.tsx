@@ -90,8 +90,48 @@ function TasksPage() {
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="hours">Available working hours</Label>
-            <Input id="hours" value={hours} onChange={(e) => setHours(e.target.value)} />
+            <Label>Available working hours</Label>
+            <div className="grid grid-cols-2 gap-3">
+              <div className="space-y-1.5">
+                <Label htmlFor="start" className="text-xs text-muted-foreground">
+                  Start
+                </Label>
+                <Input
+                  id="start"
+                  type="time"
+                  value={start}
+                  onChange={(e) => setStart(e.target.value)}
+                />
+              </div>
+              <div className="space-y-1.5">
+                <Label htmlFor="end" className="text-xs text-muted-foreground">
+                  End
+                </Label>
+                <Input
+                  id="end"
+                  type="time"
+                  value={end}
+                  onChange={(e) => setEnd(e.target.value)}
+                />
+              </div>
+            </div>
+            <div className="space-y-1.5">
+              <Label htmlFor="lunch" className="text-xs text-muted-foreground">
+                Lunch break
+              </Label>
+              <Select value={lunch} onValueChange={setLunch}>
+                <SelectTrigger id="lunch">
+                  <SelectValue />
+                </SelectTrigger>
+                <SelectContent>
+                  {LUNCH_OPTIONS.map((l) => (
+                    <SelectItem key={l} value={l}>
+                      {l}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+            </div>
           </div>
 
           <div className="space-y-2">
