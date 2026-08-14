@@ -59,7 +59,9 @@ function SidebarInner({ onNavigate }: { onNavigate?: (() => void) | undefined })
             Productivity Assistant
           </span>
         </span>
+        <ThemeToggle className="ml-auto border-sidebar-border bg-sidebar-accent/50 text-sidebar-foreground hover:bg-sidebar-accent hover:text-sidebar-accent-foreground" />
       </div>
+
 
       <div className="mt-7 flex-1">
         <p className="mb-2 px-3 text-[0.7rem] font-semibold tracking-wider text-sidebar-foreground/40 uppercase">
