@@ -96,6 +96,7 @@ export function AppShell({ children }: { children: ReactNode }) {
           <Menu className="size-4" />
         </button>
         <span className="font-display text-sm font-semibold">AI Workplace Assistant</span>
+        <ThemeToggle className="ml-auto" />
       </header>
 
       <div
