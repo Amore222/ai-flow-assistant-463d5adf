@@ -41,8 +41,16 @@ export const Route = createFileRoute("/tasks")({
 function TasksPage() {
   const fn = useServerFn(planTasks);
   const [framework, setFramework] = useState<string>(PRIORITY_FRAMEWORKS[0]);
-  const [hours, setHours] = useState("09:00–17:00, 1h lunch at 13:00");
+  const [start, setStart] = useState("09:00");
+  const [end, setEnd] = useState("17:00");
+  const [lunch, setLunch] = useState("1 hour");
   const [tasks, setTasks] = useState("");
+
+  const LUNCH_OPTIONS = ["None", "30 minutes", "1 hour", "1.5 hours", "2 hours"] as const;
+
+  const hours = `${start}–${end}, ${
+    lunch === "None" ? "no lunch break" : `${lunch} lunch`
+  }`;
 
   const mutation = useMutation({
     mutationFn: (data: { tasks: string; framework: string; hours: string }) => fn({ data }),
